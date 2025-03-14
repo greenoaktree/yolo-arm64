@@ -12,12 +12,12 @@ jobs:
     steps:
       # 🚀 Step 1: 检出代码
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
       # setup qemu
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v4
+        uses: docker/setup-qemu-action@v3
         with:
-          platforms: linux/arm64,linux/amd64
+          platforms: linux/arm64
 
       # setup buildx
       - name: Set up Docker Buildx
