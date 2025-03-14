@@ -36,3 +36,5 @@ jobs:
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/my-docker-image:latest
 
+          
+
