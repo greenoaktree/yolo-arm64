@@ -24,7 +24,7 @@ jobs:
       # 📦 Step 3: 构建 Docker 镜像
       - name: Build Docker Image
         run: |
-          docker  buildx build --privileged --platform linux/arm64 -t my-docker-image:latest .
+          docker  buildx build  --platform linux/arm64 -t my-docker-image:latest .
           #docker build -t my-docker-image:latest .
 
       # 🔄 Step 4: 打 Tag
