@@ -32,7 +32,7 @@ jobs:
       # 检查
       - name:  check image
         run: |
-          docker buildx imagetools inspect osrf/ubuntu_arm64:noble
+          docker buildx imagetools inspect   balenalib/aarch64-ubuntu-golang
 
       # 📦 Step 3: 构建 Docker 镜像
       - name: Build Docker Image
