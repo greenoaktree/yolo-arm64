@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main  # 当推送到 main 分支时触发
+      - main
   pull_request:
   workflow_dispatch:  # 允许手动触发
 
@@ -32,15 +32,15 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      # 📦 Step 3: 构建 Docker 镜像
+      - name: Build Docker Image
+        run: |
+          docker buildx build --platform linux/arm64 -t my-docker-image:latest --load .
+
       # 检查镜像是否存在
       - name: Check built images
         run: |
           docker images
-
-      # 📦 Step 3: 构建 Docker 镜像
-      - name: Build Docker Image
-        run: |
-          docker buildx build --platform linux/arm64 -t my-docker-image:latest --push .
 
       # 🔄 Step 4: 打 Tag
       - name: Tag Docker Image
