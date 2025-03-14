@@ -4,7 +4,7 @@
 
 # Start FROM Ubuntu image https://hub.docker.com/_/ubuntu with "FROM arm64v8/ubuntu:22.04" (deprecated)
 # Start FROM Debian image for arm64v8 https://hub.docker.com/r/arm64v8/debian (new)
-FROM osrf/ubuntu_arm64:noble
+FROM  balenalib/aarch64-ubuntu-golang
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
